@@ -37,7 +37,7 @@ public class HelloWorldMC2 extends JavaPlugin implements Listener {
 		try {
 			poopcfg.load(poopfile);
 			getLogger().info(
-					"Loading " + poopcfg.getString("name")
+					"Loading Poopy StinkMeal" + poopcfg.getString("name")
 							+ ". It is used for: "
 							+ poopcfg.getString("commands.poop.description")
 							+ " Version is: " + poopcfg.getString("version"));
