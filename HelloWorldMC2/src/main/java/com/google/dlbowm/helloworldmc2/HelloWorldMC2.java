@@ -140,6 +140,7 @@ public class HelloWorldMC2 extends JavaPlugin implements Listener {
 		}
 		else if( cmd.getName().equalsIgnoreCase("stoptimer")){
 			BukkitScheduler scheduler = getServer().getScheduler();
+			count = 0;
 			scheduler.cancelTask(timerScheduler);
 		}
 				
