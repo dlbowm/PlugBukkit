@@ -1,0 +1,10 @@
+name: HelloWorldMC2
+main: com.google.dlbowm.helloworldmc2.HelloWorldMC2
+version: 0.1
+commands:
+   poop:
+      description: Find out useful information about poop!.
+      usage: /poop
+   fart:
+      description: go to the previous poop location
+      usage: /fart
