@@ -19,12 +19,15 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitScheduler;
 
 public class HelloWorldMC2 extends JavaPlugin implements Listener {
 	// create a new virtual inventory with 50 diamonds!!
 	private Inventory fake; // = getServer().createInventory(null,
 							// InventoryType.ENDER_CHEST);
 	private FileConfiguration poopcfg;
+	private int count = 0;
+	private int timerScheduler;
 
 	@Override
 	public void onEnable() {
@@ -126,6 +129,20 @@ public class HelloWorldMC2 extends JavaPlugin implements Listener {
 
 			return true;
 		}
+		else if( cmd.getName().equalsIgnoreCase("timer")){
+			BukkitScheduler scheduler = getServer().getScheduler();
+			
+	        timerScheduler = scheduler.scheduleSyncRepeatingTask(this, new Runnable() {
+	            public void run( ) {
+	            	getLogger().info("time " + count++);
+	            }
+	        }, 0L, 20L);
+		}
+		else if( cmd.getName().equalsIgnoreCase("stoptimer")){
+			BukkitScheduler scheduler = getServer().getScheduler();
+			scheduler.cancelTask(timerScheduler);
+		}
+				
 		return false;
 	}
 

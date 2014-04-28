@@ -8,3 +8,9 @@ commands:
    fart:
       description: go to the previous poop location
       usage: /fart
+   timer:
+      description: timer
+      usage: /timer
+   stoptimer:
+      description: stop the timer
+      usage: /stoptimer
